@@ -9,47 +9,31 @@ Messages are listed below by type. Notes:
   All numbers are sent little-endian. This makes things easy for x86 users at the expense of being unusual.
   Except as noted (health), all integer fields are unsigned.
   
-Type: 1 (Message)
- -- send message to the other players
+Type: 1 (Message) -- send message to the other players
+Type: 2 (Change room) -- change room from one to another
+Type: 3 (Fight) -- start a fight in the room
  
-Type: 2 (Change room)
- -- change room from one to another
+Type: 4 (PVPFIGHT)(not supported yet) -- request a fight to a player or monster
  
-Type: 3 (Fight)
- -- start a fight in the room
+Type: 5 (Loot) -- loot a body in the room
  
-Type: 4 (PVPFIGHT)(not supported yet)
- -- request a fight to a player or monster
+Type: 6 (Start) -- start playing game
  
-Type: 5 (Loot)
- -- loot a body in the room
+Type: 7 (Error) -- send error message if any action wrongly happened
  
-Type: 6 (Start)
- -- start playing game
+Type: 8 (Accept) -- send player accept message for action success
  
-Type: 7 (Error)
- -- send error message if any action wrongly happened
+Type: 9 (Room) -- send player room info
  
- Type: 8 (Accept)
- -- send player accept message for action success
+Type: 10 (Character) -- send player character info like stat, health, gold, etc.
  
- Type: 9 (Room)
- -- send player room info
+Type: 11 (Game) -- send game info to player
  
- Type: 10 (Character)
- -- send player character info like stat, health, gold, etc.
+Type: 12 (Leave) -- receive from player and disconnect the player
  
- Type: 11 (Game)
- -- send game info to player
+Type: 13 (Connection) -- for next available room for the room the play is in
  
- Type: 12 (Leave)
- -- receive from player and disconnect the player
- 
- Type: 13 (Connection)
- -- for next available room for the room the play is in
- 
- Type: 14 (Version)
- -- send lurk protocl version info
+Type: 14 (Version) -- send lurk protocl version info
  
 
 *To play the game may need a lurk protocl client
