@@ -9,7 +9,7 @@ Messages are listed below by type. Notes:
   All numbers are sent little-endian. This makes things easy for x86 users at the expense of being unusual.
   Except as noted (health), all integer fields are unsigned.
   
-Type: 1 (Message) -- send message to the other players
+Type: 1 (Message) -- send message to the other players\n
 Type: 2 (Change room) -- change room from one to another
 Type: 3 (Fight) -- start a fight in the room
 Type: 4 (PVPFIGHT)(not supported yet) -- request a fight to a player or monster
