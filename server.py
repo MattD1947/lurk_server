@@ -155,7 +155,8 @@ def main():
 	address = sys.argv[1]
 	port = int(sys.argv[2])
 
-	# server_socket.bind((socket.gethostname(), port))
+	# server_socket.bind((socket.gethostname(), port)) 
+	# assign this above if you are running this locally
 	server_socket.bind((address, port))
 	server_socket.listen(65535)
 	sockets_list = [server_socket]
