@@ -11,6 +11,7 @@ Except as noted (health), all integer fields are unsigned.
 
 Type: 1 (Message) 
 -- send message to the other players
+
 Type: 2 (Change room)
 -- change room from one to another
 Type: 3 (Fight) 
