@@ -59,10 +59,6 @@ class Monster_unit:
     def getName():
 	    return name
 
-# class Messages:
-#	def __init__(self,recipient_name,message_detail):
-#		self.recipient_name = recipient_name
-
 
 	
 
