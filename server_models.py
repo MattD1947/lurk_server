@@ -53,14 +53,8 @@ global live_monster_list
 live_monster_list = {}
 room_number_used_list = {}
 for i in range(len(prepare_monsters)):
-#	 while True:
-#		room_number = randint(0,10)
-#		if room_number_used_list.get(room_number,None) == None:
-#			room_number_used_list[room_number] = "Used"
-#			break
 	
 	room_number = randint(0,10)
-			
 	rooms[room_number].addPlayer(prepare_monsters[i]["name"])
 	name = prepare_monsters[i]["name"]
 	flags = prepare_monsters[i]["flags"]
@@ -76,7 +70,6 @@ for i in range(len(prepare_monsters)):
 
 
 def Game(data):## type 11
-    # Type = str(data[0])
     i = 0
     StartPoint = str(struct.unpack("H",data[:i+2])[0])
     StatLimit = str(struct.unpack("H",data[i+2:i+4])[0])
@@ -98,13 +91,6 @@ def GameDescription(data):
         GameDescription +=  str(chr(data[i]))
     line = "Game Description: " + GameDescription
     return line
-
-# def GameDescription(data):
-#     message = ""
-#     for i in range(len(data)):
-#         message +=  chr(data[i])
-#     return message
-
 
 def recvProcess(data, client_socket, characters,
 		leave
@@ -215,7 +201,6 @@ def Loot(client_socket,characters):
 			SendMessage(client_socket,message_detail)
 			# Error(client_socket,35)
 			return
-## there are issue here, take a break now
 
 		gold_looted = {**characters[target_player].gold}
 		characters[target_player].gold = 0
@@ -955,9 +940,6 @@ def Check_Room_Player_List(client_socket,rooms,character_name,current_room_numbe
 			body = description.encode('ascii')
 			client_socket.sendall(header)
 			client_socket.sendall(body)
-		#	socket = PlayerSocket(player_name)
-		#	if socket != None:
-		#		Character(socket,characters,character_name)
 	mutex.release()
 		
 def PlayerSocket(player_name):
@@ -989,7 +971,6 @@ def LivePlayerList(characters):
 
 
 def Old_Character():
-    # h,w = bottom.getmaxyx()
     Type = 10 ## 1byte
     Name = "Name:"
     name = str(input("Name: "))
@@ -1110,9 +1091,6 @@ def Message(client_socket):
 		Error(client_socket,17)
 		mutex.release()
 		return
-	# if live_player_list.get(client_socket,"") != sender_name:
-	#	Error(client_socket,18)
-	#	return
 	send_status = False
 	for the_socket in live_player_list:
 		if recipient_name == sender_name:
@@ -1125,12 +1103,7 @@ def Message(client_socket):
 		elif live_player_list[the_socket] == recipient_name:
 			print("Befor check: "+sender_name)
 			print(recipient_name)
-            #the_socket.sendall(header)
-            #the_socket.sendall(body)
-            #client_socket.sendall(header)
-            #client_socket.sendall(body)
 			SendMessage(the_socket,message_detail)
-		#	SendMessage(client_socket,message_detail)
 			send_status = True
 			message_array.append(message_detail)
 			break
@@ -1191,7 +1164,6 @@ def Leave():
     return signal
 
 def Connection(client_socket, current_room_number):
-    # room_desc_len = data[33:35].decode('ascii').rstrip('\x00')
     
     lines = []
     nextroom = current_room_number + 1
