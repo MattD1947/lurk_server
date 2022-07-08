@@ -51,4 +51,4 @@ Type: 13 (Connection)
 Type: 14 (Version)
 -- send lurk protocl version info
 
-\*To play the game may need a lurk protocl client
+\*To play the game may need a lurk protocol client
